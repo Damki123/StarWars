@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:700" rel="stylesheet">
+    <audio class="audio" id="nav_audio">
+            <source src="media/lightsaberswing.wav" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="nav_audio_click">
+            <source src="media/lightsaberoff.wav" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="vader">
+            <source src="media/vader.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="yoda">
+            <source src="media/yoda.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="yoda1">
+            <source src="media/yoda1.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="leia">
+            <source src="media/leia.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="anakin">
+            <source src="media/anakin.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="luke">
+            <source src="media/luke.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="han">
+            <source src="media/han.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="chewie">
+            <source src="media/chewie.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="c3po">
+            <source src="media/c3po.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="r2d2">
+            <source src="media/r2d2.mp3" type="audio/mpeg"></source>
+    </audio>
+    <audio class="audio" id="obiwan">
+            <source src="media/obiwan.mp3" type="audio/mpeg"></source>
+    </audio>
+    <link rel="icon"  href="favicon.ico"> 
+    <title>In a galaxy far far away...</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!--LOADING SCREEN-->
+       <div class="loader">
+                <div class="lightsaber">
+                        <hr class="hilt"><div class="hide"><hr class="blade"></div>
+                </div>
+                <p>loading</p>
+                <div class="lightsaber1">
+                        <div class="hide1"><hr class="blade1"></div><hr class="hilt1">
+                </div>
+            </div>
+        <!--SOUND WARNING-->
+       <!--  <div class="wrap-dialog">
+                    <div id="dialog">
+                        <h1>Warning!</h1>
+                        <p>This site uses variety of</p><p class="grey"><i class="fas fa-music"></i>  sound  <i class="fas fa-music"></i></p><p>effects. For maximum viewing experience, please adjust Your audio device to reasonable levels. You can always disable sound by clicking the icon in the bottom-right corner. Enjoy!</p>
+                        <button id="okay" class="btn btn-outline-warning btn-lg">Okay</button>
+                    </div>
+                </div>-->
+        <!--NAVIGATION BAR-->
+        <div class="menu">M<br>E<br>N<br>U</div> 
+        <div id="navbar" class="navbar navbar-hidden">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a id="home" class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a id="characters" class="nav-link" href="#">Characters</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Costutaj</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Smgelse</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://www.damianchmiel.pl">Go to portfolio</a>
+                </li>
+              </ul>
+        </div>
+        <!--CHOOSING LAYOUT-->
+        <div id="wrapmodal" class="wrapmodal">
+            <div id="modal" class="popup col-lg-6">
+                <div id="choice" class="row justify-content-center">Choose Your side:</div>
+                <div class="row">
+                    <div class="col">
+                        <a id="light" href="#">Light</a>
+                    </div>
+                    <div class="col">
+                        <a id="dark" href="#">Dark</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MAIN PAGE CONTENT-->
+        <div class="wrapcontent">
+            <div class="title">
+                <p>welcome to</p>
+                <h1>STAR WARS</h1>
+                <p>fan site</p>
+            </div>
+            <div class="wraptextcrawl">
+                <div class="content"><p>Welcome to Star Wars Fan Site!<br> Don't think there's something interesting here, it's actualy quite boring.<br>Realy.<br>
+                    Get out of here, now.<br> Seriously, go on... out of here! <br> Shoo, You...
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--BOTTOM MENU-->
+    <div class="menu-bottom">
+            <div id="layoutchange"><i class="fab fa-empire"></i><i class="fab fa-rebel"></i> Layout</div>
+            <div id="sound"><i class="fas fa-volume-up"></i></div>
+            <div id="nosound" class="opaque"><i class="fas fa-volume-mute"></i></div>
+        </div>
+    <!--CHARACTER CARDS-->
+    <div class="wrap-characters-mask wcm-offscreen">lol</div>
+    <div class="wrap-characters characters-offscreen">
+        <div class="card-instruction">Double click to reveal card</div> 
+        <div id="anakin-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Anakin Skywalker<hr>Darth Vader</div>
+                </div>
+                <div class="card-front">
+                    <div id="anakin-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#anakin-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#anakin-carousel" data-slide-to="1"></li>
+                            <li data-target="#anakin-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="http://www.fullhdwpp.com/wp-content/uploads/Star-Wars-Anakin.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://www.desktopbackground.org/download/1920x1080/2013/08/08/620001_1260x888px-anakin-wallpapers_1920x1200_h.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://wallpaperplay.com/walls/full/6/7/6/84874.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#anakin-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#anakin-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="luke-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Luke Skywalker</div>
+                </div>
+                <div class="card-front">
+                   <div id="luke-carousel" class="carousel slide" data-ride="carousel">
+                       <ol class="carousel-indicators">
+                           <li data-target="#luke-carousel" data-slide-to="0" class="active"></li>
+                           <li data-target="#luke-carousel" data-slide-to="1"></li>
+                           <li data-target="#luke-carousel" data-slide-to="2"></li>
+                       </ol>
+                       <div class="carousel-inner" role="listbox">
+                           <div class="carousel-item active">
+                               <img src="https://s2.best-wallpaper.net/wallpaper/1920x1080/1903/Luke-Star-Wars-The-Last-Jedi_1920x1080.jpg" alt="First slide">
+                           </div>
+                           <div class="carousel-item">
+                               <img src="http://www.fullhdwpp.com/wp-content/uploads/Star-Wars-Luke-Skywalker-Tatooine.jpg" alt="Second slide">
+                           </div>
+                           <div class="carousel-item">
+                               <img src="https://img.wallpapersafari.com/desktop/1920/1080/74/94/RlbEF9.jpg" alt="Third slide">
+                           </div>
+                       </div>
+                       <a class="carousel-control-prev" href="#luke-carousel" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Previous</span>
+                       </a>
+                       <a class="carousel-control-next" href="#luke-carousel" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                           <span class="sr-only">Next</span>
+                       </a>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div id="leia-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Leia<br>Organa-Solo</div>
+                </div>
+                <div class="card-front">
+                <div id="leia-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#leia-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#leia-carousel" data-slide-to="1"></li>
+                        <li data-target="#leia-carousel" data-slide-to="2"></li>
+                        <li data-target="#leia-carousel" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="https://c.wallhere.com/photos/50/5c/1920x1080_px_Carrie_Fisher_Leia_Organa_movies_Star_Wars-629853.jpg!d" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images6.alphacoders.com/882/882296.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://wallpaperplay.com/walls/full/a/2/2/220837.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://c.wallhere.com/photos/29/2b/movies_Star_Wars_Leia_Organa_Carrie_Fisher-238065.jpg!d" alt="Fourth slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#leia-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#leia-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>    
+                </div>
+            </div
+            ></div>
+        <div id="han-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Han Solo</div>
+                </div>
+                <div class="card-front">
+                <div id="han-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#han-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#han-carousel" data-slide-to="1"></li>
+                        <li data-target="#han-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="https://hdwallsbox.com/wallpapers/l/1920x1080/107/han-solo-harrison-ford-jedi-star-wars-artwork-1920x1080-106796.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://ocdn.eu/pulscms-transforms/1/cwfk9kqTURBXy81M2Q4MGZjMWFkNDdhZDc3OGM4YWEwNGM5NmIwMjQ3Ni5qcGVnkpUDACbNBIXNAoqTBc0HgM0EOIGhMAE" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://wallpaperstream.com/wallpapers/full/star-wars/Han-Solo-Harrison-Ford-in-Star-Wars.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#han-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#han-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>    
+                </div>
+            </div>
+        </div>
+        <div id="chewie-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Chewbacca</div>
+                </div>
+                <div class="card-front">
+                <div id="chewie-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#chewie-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#chewie-carousel" data-slide-to="1"></li>
+                        <li data-target="#chewie-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="https://images.alphacoders.com/865/thumb-1920-86511.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://hdwallpaper20.com/wp-content/uploads/data/2018/4/7/Chewbacca-Wallpaper-PIC-HWB434041.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://starwarswallpaperhd.com/web/wallpapers/chewbacca-art-hd-wallpaper-no-1/1920x1080.jpg" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#chewie-carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#chewie-carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>    
+                </div>
+            </div>
+        </div>
+        <div id="yoda-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Yoda</div>
+                </div>
+                <div class="card-front">
+                    <div id="yoda-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#yoda-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#yoda-carousel" data-slide-to="1"></li>
+                            <li data-target="#yoda-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="http://paperlief.com/images/yoda-wallpaper-1920x1080-wallpaper-4.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://wallpapercave.com/wp/wp2746718.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="http://i0.wp.com/getwallpapers.com/wallpaper/full/f/6/2/1001657-most-popular-yoda-wallpaper-1920x1080-for-iphone-5s.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#yoda-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#yoda-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="obiwan-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">Obi-Wan<br>Kenobi</div>
+                </div>
+                <div class="card-front">
+                    <div id="kenobi-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#kenobi-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#kenobi-carousel" data-slide-to="1"></li>
+                            <li data-target="#kenobi-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="https://wallpapercave.com/wp/wp2607785.jpg" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i0.wp.com/geekmom.com/wp-content/uploads/sites/4/2017/12/obiwankenobi.jpg?fit=1920%2C1080&ssl=1" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://i.redd.it/ywj7w8p7aq201.jpg" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#kenobi-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#kenobi-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div id="c3po-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">C3-PO</div>
+                </div>
+                <div class="card-front">
+                    <div id="c3-p0-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#c3-p0-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#c3-p0-carousel" data-slide-to="1"></li>
+                            <li data-target="#c3-p0-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img src="https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5a217654f9619a2736f298cd/1512142423752/3po.jpg?format=2500w" alt="First slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="http://wallpapertop.net/wp-content/uploads/2018/05/C3po%20HD%20Background.jpg" alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://imgnooz.com/sites/default/files/styles/1920x1080/public/wallpaper/movies/60125/r2d2-wallpapers-60125-8372204.jpg?itok=fAOiz2W8" alt="Third slide">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#c3-p0-carousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#c3-p0-carousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="r2d2-card" class="card">
+            <div class="card-inner">
+                <div class="card-back">
+                    <div class="card-title">R2-D2</div>
+                </div>
+                <div class="card-front">
+                        <div id="carouselId" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselId" data-slide-to="1"></li>
+                                <li data-target="#carouselId" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <img src="https://i.pinimg.com/originals/d5/86/1c/d5861c8ae9c2b8346767f74204975a06.jpg" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://img.wallpapersafari.com/desktop/1920/1080/92/54/TaF6Ub.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://wpmisc.com/sites/default/files/styles/1920x1080/public/wallpaper/movies/70745/r2d2-hd-wallpapers-70745-8446856.png?itok=gDeIq0bM" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+    setTimeout (function(){
+        $('.loader').addClass('hidden-loader')
+    },4000);
+})
+
+$('#sound').click(function(){
+        $('.audio').prop("muted", true);
+        $('#sound').addClass('opaque');
+        $('#nosound').removeClass('opaque');
+})
+$('#nosound').click(function(){
+        $('.audio').prop("muted", false);
+        $('#nosound').addClass('opaque');
+        $('#sound').removeClass('opaque');
+})
+
+$('#okay').click(function(){
+    $('#dialog').addClass('hidden');
+})
+
+$('#light').click(function(){
+    $('#wrapmodal').toggleClass('hidden');
+    $('.wrapper').toggleClass('wrapper-bglight');
+    $('.navbar a').toggleClass('btn-lightside');
+    $('.menu').toggleClass('menu-lightside');
+    $('.wrapcontent').toggleClass('wrapcontent-light');
+    $('.wrap-characters').toggleClass('wrapcontent-light');
+    $('.fa-empire').addClass('opaque');
+    $('#sound').addClass('black');
+    $('#nosound').addClass('black');
+    $('#layoutchange').addClass('black');
+})
+
+$('#dark').click(function(){
+    $('#wrapmodal').toggleClass('hidden');
+    $('.wrapper').toggleClass('wrapper-bgdark');
+    $('.navbar a').toggleClass('btn-darkside');
+    $('.menu').toggleClass('menu-darkside');
+    $('.wrapcontent').toggleClass('wrapcontent-dark');
+    $('.wrap-characters').toggleClass('wrapcontent-dark');
+    $('.fa-rebel').addClass('opaque');
+    $('#sound').addClass('white');
+    $('#nosound').addClass('white');
+    $('#layoutchange').addClass('white');
+})
+$('.menu').click(function(){
+    $('.navbar').toggleClass('navbar-hidden');
+    $('.menu').toggleClass('hiddenmenu');
+    $('.wrapcontent').toggleClass('blur');
+    $('.wrap-characters').toggleClass('blur');
+    if($('.wrapper').hasClass('wrapper-bglight') & ($(window).width() < 1366)) { 
+        $('#sound').toggleClass('black');
+        $('#sound').toggleClass('white');
+        $('#nosound').toggleClass('black');
+        $('#nosound').toggleClass('white');
+        $('#layoutchange').toggleClass('white');
+        $('#layoutchange').toggleClass('black');
+    }
+    if(($(window).width() < 1366)){
+        $('.wrapcontent').toggleClass('hiddenmenu');
+        $('.wrap-characters').toggleClass('hiddenmenu');
+    }
+})
+$('.navbar a').click(function(){
+    $('.navbar').toggleClass('navbar-hidden');
+    $('.menu').toggleClass('hiddenmenu');
+    $('.wrapcontent').toggleClass('blur');
+    $('.wrap-characters').toggleClass('blur');
+    if(($(window).width() < 1366)){
+        $('.wrapcontent').removeClass('hiddenmenu');
+        $('.wrap-characters').removeClass('hiddenmenu');
+    }
+    if($('.wrapper').hasClass('wrapper-bglight') & ($(window).width() < 1366)) { 
+        $('#sound').toggleClass('black');
+        $('#sound').toggleClass('white');
+        $('#nosound').toggleClass('black');
+        $('#nosound').toggleClass('white');
+        $('#layoutchange').toggleClass('white');
+        $('#layoutchange').toggleClass('black');
+    }
+})
+
+$('#layoutchange').click(function(){
+    if($('.wrapper').hasClass('wrapper-bgdark')) {
+        $('.wrapper').removeClass('wrapper-bgdark');
+        $('.navbar a').removeClass('btn-darkside');
+        $('.menu').removeClass('menu-darkside');
+        $('.wrapcontent').removeClass('wrapcontent-dark');
+        $('.wrap-characters').removeClass('wrapcontent-dark');
+        $('.wrapper').addClass('wrapper-bglight');
+        $('.navbar a').addClass('btn-lightside');
+        $('.menu').addClass('menu-lightside');
+        $('.wrapcontent').addClass('wrapcontent-light');
+        $('.wrap-characters').addClass('wrapcontent-light');
+        $('#sound').removeClass('white');
+        $('#nosound').removeClass('white');
+        $('#layoutchange').removeClass('white');
+        $('#sound').addClass('black');
+        $('#nosound').addClass('black');
+        $('#layoutchange').addClass('black');
+        $('.fa-empire').addClass('opaque');
+        $('.fa-rebel').removeClass('opaque');
+        $('.wrap-characters-mask').removeClass('wcm-darkside');
+        $('.wrap-characters-mask').addClass('wcm-lightside');
+    }
+    else if($('.wrapper').hasClass('wrapper-bglight')) {
+        $('.wrapper').removeClass('wrapper-bglight');
+        $('.navbar a').removeClass('btn-lightside');
+        $('.menu').removeClass('menu-lightside');
+        $('.wrapcontent').removeClass('wrapcontent-light');
+        $('.wrap-characters').removeClass('wrapcontent-light');
+        $('.wrapper').addClass('wrapper-bgdark');
+        $('.navbar a').addClass('btn-darkside');
+        $('.menu').addClass('menu-darkside');
+        $('.wrapcontent').addClass('wrapcontent-dark');
+        $('.wrap-characters').addClass('wrapcontent-dark');
+        $('#sound').removeClass('black');
+        $('#nosound').removeClass('black');
+        $('#layoutchange').removeClass('black');
+        $('#sound').addClass('white');
+        $('#nosound').addClass('white');
+        $('#layoutchange').addClass('white');
+        $('.fa-rebel').addClass('opaque');
+        $('.fa-empire').removeClass('opaque');
+        $('.wrap-characters-mask').addClass('wcm-darkside');
+        $('.wrap-characters-mask').removeClass('wcm-lightside');
+    }
+})
+    $('#characters').click(function(){
+        $('.wrap-characters').removeClass('characters-offscreen');
+        $('.wrap-characters-mask').removeClass('wcm-offscreen');
+        $('.wrapcontent').addClass('content-offscreen');
+        if($('.wrapper').hasClass('wrapper-bglight')){
+            $('.wrap-characters-mask').addClass('wcm-lightside');
+        }
+        else{
+            $('.wrap-characters-mask').addClass('wcm-darkside');
+        }
+    })
+    $('#home').click(function(){
+        $('.wrap-characters').addClass('characters-offscreen');
+        $('.wrap-characters-mask').addClass('wcm-offscreen');
+        $('.wrapcontent').removeClass('content-offscreen');
+    })
+    $('.card-inner').dblclick(function(){
+        $(this).toggleClass('rotate');
+        $(this).toggleClass('card-active');
+    })
+$(document).ready(function(){
+    $("#dark").hover(function(){
+        vader.play();
+        },
+        function(){
+        vader.load();
+        });
+})
+$(document).ready(function(){
+    $("#light").hover(function(){
+        yoda.play();
+        },
+        function(){
+        yoda.load();
+        });
+})
+$(document).ready(function(){
+    $(".nav a").hover(function(){
+        nav_audio_click.play();
+        },
+        function(){
+        nav_audio_click.load();
+        });
+})
+$(document).ready(function(){
+    $(".nav a").click(function(){
+        nav_audio.play();})
+})
+$(".grey").hover(function(){
+        nav_audio.play();
+        },
+        function(){
+        nav_audio.load();
+        });
+
+$(document).ready(function(){
+    $('#anakin-card .card-back').dblclick(function(){
+        anakin.play();
+    })
+    $('#luke-card .card-back').dblclick(function(){
+        luke.play();
+    })
+    $('#yoda-card .card-back').dblclick(function(){
+        yoda1.play();
+    })
+    $('#leia-card .card-back').dblclick(function(){
+        leia.play();
+    })
+    $('#han-card .card-back').dblclick(function(){
+        han.play();
+    })
+    $('#chewie-card .card-back').dblclick(function(){
+        chewie.play();
+    })
+    $('#obiwan-card .card-back').dblclick(function(){
+        obiwan.play();
+    })
+    $('#c3po-card .card-back').dblclick(function(){
+        c3po.play();
+    })
+    $('#r2d2-card .card-back').dblclick(function(){
+        r2d2.play();
+    })
+})
+
+</script>
+</body>
+</html>
